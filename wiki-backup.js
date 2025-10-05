@@ -37,10 +37,11 @@ function makePageBuffers(index) {
         .then(puppet => {
             const doc = puppet.document;
             const win = puppet.window;
+            doc.body.querySelector(".vector-page-toolbar").remove();
             pdfSrc = doc.createElement("script");
             pdfSrc.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
             pdfSrc.addEventListener("load", () => {
-                win.html2pdf(doc.body)
+                win.html2pdf(doc.body.querySelector(".mw-page-container"))
                     .outputPdf("blob")
                     .then(data => {
                         archiveBlobs.push({ title: encodeURIComponent(doc.title) + ".pdf", data: data });
@@ -72,7 +73,7 @@ function makePageBuffers(index) {
 function makePuppet(url) {
     return new Promise((resolve, reject) => {
         let puppet = window.open(url);
-        puppet.addEventListener("load", () => {
+        puppet.addEventListener("DOMContentLoaded", () => {
             resolve(puppet);
         })
     })

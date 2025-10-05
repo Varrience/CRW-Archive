@@ -2,7 +2,7 @@
 
 A public archive and archive scripts of https://consumerrights.wiki
 
-Below will have the userscript needed to archive and zip the pdf files created the archive takes about ~= 20 minutes and 12-13 gigs of ram to store the files before the download is initiated
+Below will have the userscript needed to archive and zip the pdf files created if you decide to do so yourself the archive takes about ~= 20 minutes and 12-13 gigs of ram to store the files before the download is initiated to make sure that the wiki does not have excessive requests to it
 
 ## **Note** 
 there are two known documents which are big charts of the video directory and some other table archive that have low possibility of being archived for whatever reason these are not consumer rights articles so i have exluded them for the sake of my sanity since most people are here for offline usable articles all text should be readable for the most part tables and other images however may not be in the best condition (i couldn't figure out how to stop article clipping yet unfortunately :-/)

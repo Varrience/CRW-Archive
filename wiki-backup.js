@@ -43,6 +43,12 @@ function makePageBuffers(index) {
             doc.querySelector("html").style['scrollbar-width'] = "none";
             doc.body.querySelector(".vector-page-toolbar").remove();
             doc.body.querySelector(".mw-body-header > nav:nth-child(1)")?.remove();
+            const fiximg = doc.body.querySelector(".mw-page-container").getElementsByTagName("img");
+            for(let img of fiximg) {
+                if(img.srcset) {
+                    img.srcset = img.srcset.replace(/\s*[\d\.]+x/g, "")
+                }
+            }
             pdfSrc = doc.createElement("script");
             pdfSrc.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
             pdfSrc.addEventListener("load", () => {
